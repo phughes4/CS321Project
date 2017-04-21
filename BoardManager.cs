@@ -21,25 +21,26 @@ public class BoardManager : MonoBehaviour {
     { goalGreen = x; }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))//Reset Button.
-	        Application.LoadLevel(sceneName);
+	{
+		if (Input.GetKeyDown (KeyCode.R))//Reset Button.
+			MainMenuScript.Resetter ();
+	}
 
 	    //Basically, since our scenes are premade, we can simply and easily tell unity to load the level again.
 	    //This stuff works as long as the scenes are registered as levels in the build. We will need to do this anyway in order to switch levels.
 	    //https://docs.unity3d.com/ScriptReference/Application.LoadLevel.html
 	
 	
-        if(Input.GetKeyDown("p"))//Pause menu?
-        {
+       // if(Input.GetKeyDown("p"))//Pause menu?
+       // {
 	        //Display the pause menu, or the controls, or something. Optional.
-        }
+       // }
         Debug.Log("green is "+goalGreen+". red is "+goalRed);
         if(goalRed == true && goalGreen == true)
         {
             //Do the win menu. (GUI) Get from Chase.
             AudioManager.instance.PlaySingle(win, 1f);
-            Application.LoadLevel(sceneName+1);
+            Application.LoadLevel(1);
 	        //For now, we'll just flatly load the next level.
         }
     }
