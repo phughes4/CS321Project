@@ -8,25 +8,25 @@ using Nunit.Framework;
 public class BoardManagerTests
 {
 	[Test]
-	public void setGoalRed(bool x)
+	public void setGoalRedAssertions()
 	{
-		x = true;
-		goalRed = x;
+		bool x = true;
+		setGoalRed(x);
 		Assert.IsTrue(goalRed);
 		x = false;
-		goalRed = x;
-		Assert.IsTrue(goalRed);
+		setGoalRed(x);
+		Assert.IsFalse(goalRed);
 	}
 	
 	[Test]
-	public void setGoalGreen(bool x)
+	public void setGoalGreenAssertions()
 	{
-		x = true;
-		goalGreen = x;
+		bool x = true;
+		setGoalGreen(x);
 		Assert.IsTrue(goalGreen);
 		x = false;
-		goalGreen = x;
-		Assert.IsTrue(goalGreen);
+		setGoalGreen(x);
+		Assert.IsFalse(goalGreen);
 	}
 	
 }
